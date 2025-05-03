@@ -5,13 +5,11 @@ from django.urls import path
 app_name = 'food'
 urlpatterns = [
     #/food/
-    path('', views.index, name='index'),
-    #/food/test
-    path('test/', views.test, name='test'),
+    path('', views.IndexClassView.as_view(), name='index'),
     #/food/1
-    path('<int:item_id>', views.detail, name='detail'),
+    path('<int:item_id>', views.DetailsClassView.as_view(), name='detail'),
     # add items
-    path('add', views.create_item, name='create_item'),
+    path('add', views.CreateItem.as_view(), name='create_item'),
     # edit
     path('update/<int:id>/', views.update_item, name='update_item'),
     # delete
