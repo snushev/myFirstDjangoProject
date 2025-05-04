@@ -69,9 +69,10 @@ python manage.py runserver
 
 - [x] Split features into modular Django apps
 - [x] Add `signals.py` for automated model actions (e.g. user profile creation)
+- [x] Improve the frontend (Bootstrap)
+- [x] Add pagination
 - [ ] Write unit tests
 - [ ] Add Docker support
-- [ ] Improve the frontend (Bootstrap or Tailwind)
 
 ---
 
