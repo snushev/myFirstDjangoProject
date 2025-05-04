@@ -76,12 +76,6 @@ python manage.py runserver
 
 ---
 
-## 📸 Screenshots (Optional)
-
-> Add screenshots to a `/screenshots` folder and link them here if desired.
-
----
-
 ## 💡 Why This Project?
 
 This is my **first step into Django and backend development**.  
