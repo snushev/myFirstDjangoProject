@@ -26,6 +26,16 @@ class IndexClassView(ListView):
     context_object_name = 'item_list'
     paginate_by = 2
 
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        item_name = self.request.GET.get('item_name')
+        
+        if item_name:
+            queryset = queryset.filter(item_name__icontains=item_name)
+        
+        return queryset
+    
+
 # def detail(request, item_id):
 #         item = Item.objects.get(pk=item_id)
 #         context = {
