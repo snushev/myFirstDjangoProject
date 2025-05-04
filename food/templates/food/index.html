@@ -6,7 +6,7 @@
 {% for item in item_list %}
 <div class="row">
     <div class="col-md-3 offset-md-2">
-        <img class="card" , style="width: 200px; height: 200px;" , src="{{ item.item_image }}" />
+        <img class="card" , style="width: 200px;; height: 200px;" , src="{{ item.item_image }}" />
     </div>
     <div class="col-md-4">
         <h3>{{ item.item_name }}</h3>
@@ -18,5 +18,18 @@
     </div>
 </div>
 {% endfor %}
+
+
+{% if page_obj.has_previous %}
+<a href="?page=1">First</a>
+<a href="?page={{ page_obj.previous_page_number }}">Previous</a>
+{% endif %}
+
+<span>Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
+
+{% if page_obj.has_next %}
+<a href="?page={{ page_obj.next_page_number }}">Next</a>
+<a href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+{% endif %}
 
 {% endblock %}

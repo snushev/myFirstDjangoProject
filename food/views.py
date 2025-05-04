@@ -7,6 +7,7 @@ from .forms import ItemForm
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView
+from django.core.paginator import Paginator
 # Create your views here.
 
 # def index(request):
@@ -23,7 +24,7 @@ class IndexClassView(ListView):
     model = Item
     template_name = 'food/index.html'
     context_object_name = 'item_list'
-
+    paginate_by = 2
 
 # def detail(request, item_id):
 #         item = Item.objects.get(pk=item_id)
